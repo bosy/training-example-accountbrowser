@@ -8,10 +8,10 @@
 		<version>0.1.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>accountbrowser.gui.swing</artifactId>
+	<artifactId>accountbrowser.dao</artifactId>
 	<packaging>jar</packaging>
 
-	<name>Account Browser - GUI Swing module</name>
+	<name>Account Browser - DAO module</name>
 
 	<dependencies>
 		<dependency>
@@ -22,7 +22,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.tieto.academy.accountbrowser</groupId>
-			<artifactId>accountbrowser.dao</artifactId>
+			<artifactId>accountbrowser.core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>

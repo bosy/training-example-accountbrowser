@@ -12,6 +12,12 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
+import com.tieto.academy.accountbrowser.gui.swing.accountdetail.action.ApproveAccountAction;
+import com.tieto.academy.accountbrowser.gui.swing.accountdetail.action.FetchAccountDetailAction;
+import com.tieto.academy.accountbrowser.gui.swing.accountdetail.action.SaveAccountAction;
+import com.tieto.academy.accountbrowser.gui.swing.accountdetail.state.EmptyState;
+import com.tieto.academy.accountbrowser.gui.swing.accountdetail.state.StateHolder;
+
 /**
  * Account detail GUI frame.
  * 
@@ -33,6 +39,7 @@ public class AccountDetailFrame extends javax.swing.JFrame {
     private JLabel lblOwnersName;
     private JPanel pnlAccountDetails;
     private JPanel pnlMain;
+    private final StateHolder stateHolder;
     private JTextField txtAccountId;
     private JTextField txtAccountState;
     private JTextField txtBalance;
@@ -44,6 +51,7 @@ public class AccountDetailFrame extends javax.swing.JFrame {
     public AccountDetailFrame() {
         super("Account browser");
         this.initGUI();
+        this.stateHolder = new StateHolder(this, new EmptyState());
     }
 
     /**
@@ -137,6 +145,15 @@ public class AccountDetailFrame extends javax.swing.JFrame {
     }
 
     /**
+     * Returns stateHolder.
+     * 
+     * @return the stateHolder
+     */
+    public StateHolder getStateHolder() {
+        return this.stateHolder;
+    }
+
+    /**
      * Returns txtAccountId.
      * 
      * @return the txtAccountId
@@ -200,6 +217,7 @@ public class AccountDetailFrame extends javax.swing.JFrame {
                     this.pnlMain.add(this.btnFetchAccountDetails, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
                             GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 5, 0, 5), 0, 0));
                     this.btnFetchAccountDetails.setText("Fetch account details");
+                    this.btnFetchAccountDetails.setAction(new FetchAccountDetailAction(this, "Fetch account details"));
                 }
                 {
                     this.pnlAccountDetails = new JPanel();
@@ -262,12 +280,14 @@ public class AccountDetailFrame extends javax.swing.JFrame {
                     this.pnlMain.add(this.btnSave, new GridBagConstraints(1, 2, 1, 1, 0.0, 0.0,
                             GridBagConstraints.EAST, GridBagConstraints.NONE, new Insets(0, 5, 0, 5), 0, 0));
                     this.btnSave.setText("Save");
+                    this.btnSave.setAction(new SaveAccountAction(this, "Save"));
                 }
                 {
                     this.btnApprove = new JButton();
                     this.pnlMain.add(this.btnApprove, new GridBagConstraints(2, 2, 1, 1, 0.0, 0.0,
                             GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 5, 0, 5), 0, 0));
                     this.btnApprove.setText("Approve");
+                    this.btnApprove.setAction(new ApproveAccountAction(this, "Approve"));
                 }
             }
             this.pack();

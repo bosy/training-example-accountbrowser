@@ -27,7 +27,9 @@
 	</build>
 
 	<modules>
+		<module>accountbrowser.core</module>
 		<module>accountbrowser.gui.swing</module>
+		<module>accountbrowser.dao</module>
 	</modules>
 
 	<reporting>
