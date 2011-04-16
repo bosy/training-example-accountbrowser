@@ -12,6 +12,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
+import com.tieto.academy.accountbrowser.gui.swing.accountdetail.action.FetchAccountDetailAction;
+
 /**
  * Account detail GUI frame.
  * 
@@ -200,6 +202,7 @@ public class AccountDetailFrame extends javax.swing.JFrame {
                     this.pnlMain.add(this.btnFetchAccountDetails, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
                             GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 5, 0, 5), 0, 0));
                     this.btnFetchAccountDetails.setText("Fetch account details");
+                    this.btnFetchAccountDetails.setAction(new FetchAccountDetailAction("Title"));
                 }
                 {
                     this.pnlAccountDetails = new JPanel();
