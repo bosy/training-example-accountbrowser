@@ -5,21 +5,16 @@ package com.tieto.academy.accountbrowser.gui.swing.accountdetail.Akce;
 
 import java.awt.event.ActionEvent;
 
-import javax.swing.AbstractAction;
+import accountbrowser.dao.abi002.DAOFactory;
+import accountbrowser.domain.Account;
+
+import com.tieto.academy.accountbrowser.gui.swing.accountdetail.AccountDetailFrame;
 
 /**
  * @author Student
  * 
  */
-public class FetchAccountDetailsActions extends AbstractAction {
-
-    /**
-     * @param name
-     */
-    public FetchAccountDetailsActions(String name) {
-        super(name);
-
-    }
+public class FetchAccountDetailsActions extends AccountDetailAbstractAction {
 
     /*
      * (non-Javadoc)
@@ -29,6 +24,19 @@ public class FetchAccountDetailsActions extends AbstractAction {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
+        DAOFactory daoFactory = DAOFactory.getInstance();
+        String id = getFrame().getTxtAccountId().getText();
+        Account account = daoFactory.getAccountDAO().fetch(Integer.parseInt(id));
+        System.out.println(account.toString());
+
+    }
+
+    /**
+     * @param frame
+     * @param name
+     */
+    public FetchAccountDetailsActions(AccountDetailFrame frame, String name) {
+        super(frame, name);
 
     }
 

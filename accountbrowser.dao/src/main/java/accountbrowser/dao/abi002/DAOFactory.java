@@ -3,6 +3,9 @@
  */
 package accountbrowser.dao.abi002;
 
+import accountbrowser.dao.hashmap.HashMapAccountDAO;
+import accountbrowser.dao.hashmap.HashMapDAOFactory;
+
 /**
  * @author Student
  * 
@@ -18,5 +21,9 @@ public abstract class DAOFactory {
             // throw new T("not implement yet");
         }
         return instance;
+    }
+
+    public AccountDAO getAccountDAO() {
+        return new HashMapAccountDAO();
     }
 }

@@ -24,4 +24,14 @@ public class Owner {
     public void setJmeno(String jmeno) {
         this.jmeno = jmeno;
     }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return jmeno;
+    }
 }

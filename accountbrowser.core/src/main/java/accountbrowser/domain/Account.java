@@ -74,4 +74,13 @@ public class Account {
         this.balance = balance;
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return getOwner().getJmeno() + " " + getBalance() + " " + getState();
+    }
 }
