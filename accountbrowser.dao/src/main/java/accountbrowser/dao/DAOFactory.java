@@ -3,6 +3,9 @@
  */
 package accountbrowser.dao;
 
+import accountbrowser.dao.hashmap.HashMapDAOFactory;
+import accountbrowser.dao.mysql.MySQLDAOFactory;
+
 /**
  * @author Student
  * 
@@ -18,10 +21,12 @@ public abstract class DAOFactory {
             if ("hashmap".equals(property)) {
                 INSTANCE = new HashMapDAOFactory();
             } else if ("mysql".equals(property)) {
-                // throw new Not
+                INSTANCE = new MySQLDAOFactory();
             }
         }
 
         return INSTANCE;
     }
+
+    public abstract AccountDAO getAccountDAO();
 }
