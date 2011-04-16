@@ -29,16 +29,13 @@ public class AccountBrowser {
             }
         });
         // set look and feel
-        // try {
-        // UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-        // } catch (final UnsupportedLookAndFeelException e) {
-        // e.printStackTrace();
-        // } catch (final ClassNotFoundException e) {
-        // e.printStackTrace();
-        // } catch (final InstantiationException e) {
-        // e.printStackTrace();
-        // } catch (final IllegalAccessException e) {
-        // e.printStackTrace();
-        // }
+        /*
+         * try { UIManager.setLookAndFeel(
+         * "com.sun.java.swing.plaf.windows.WindowsLookAndFeel"); } catch (final
+         * UnsupportedLookAndFeelException e) { e.printStackTrace(); } catch
+         * (final ClassNotFoundException e) { e.printStackTrace(); } catch
+         * (final InstantiationException e) { e.printStackTrace(); } catch
+         * (final IllegalAccessException e) { e.printStackTrace(); }
+         */
     }
 }
