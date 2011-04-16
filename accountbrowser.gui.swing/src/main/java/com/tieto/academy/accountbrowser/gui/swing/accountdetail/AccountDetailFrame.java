@@ -202,7 +202,7 @@ public class AccountDetailFrame extends javax.swing.JFrame {
                     this.pnlMain.add(this.btnFetchAccountDetails, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
                             GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 5, 0, 5), 0, 0));
                     this.btnFetchAccountDetails.setText("Fetch account details");
-                    this.btnFetchAccountDetails.setAction(new FetchAccountDetailAction("Title"));
+                    this.btnFetchAccountDetails.setAction(new FetchAccountDetailAction(this, "Title"));
                 }
                 {
                     this.pnlAccountDetails = new JPanel();

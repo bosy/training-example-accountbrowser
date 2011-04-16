@@ -5,19 +5,23 @@ package com.tieto.academy.accountbrowser.gui.swing.accountdetail.action;
 
 import java.awt.event.ActionEvent;
 
-import javax.swing.AbstractAction;
+import accountBrowser.DAO.AccountDAO;
+import accountBrowser.DAO.DAOFactory;
+import accountBrowser.domain.Account;
+
+import com.tieto.academy.accountbrowser.gui.swing.accountdetail.AccountDetailFrame;
 
 /**
  * @author Student
  * 
  */
-public class FetchAccountDetailAction extends AbstractAction {
+public class FetchAccountDetailAction extends accountDetailAbstractAction {
 
     /**
-     * @param name
+     * @param _frame
      */
-    public FetchAccountDetailAction(String name) {
-        super(name);
+    public FetchAccountDetailAction(AccountDetailFrame _frame, String name) {
+        super(_frame, name);
         // TODO Auto-generated constructor stub
     }
 
@@ -29,10 +33,14 @@ public class FetchAccountDetailAction extends AbstractAction {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        // System.out.println("gogogo");
 
-        // DAOFactory daoFactory = DAOFactory.
+        AccountDAO accountDAO = DAOFactory.getInstance().getAccountDAO();
+
+        Integer cislo = Integer.valueOf(this.get_frame().getTxtAccountId().getText());
+
+        Account account = accountDAO.fetch(cislo);
+
+        this.get_frame().getLblBalance().setText(String.valueOf(account.get_balance()));
 
     }
-
 }

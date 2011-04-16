@@ -9,23 +9,25 @@ package accountBrowser.DAO;
  */
 public abstract class DAOFactory {
 
-    private static DAOFactory _instance;
+    private static DAOFactory _INSTANCE;
 
     public static synchronized DAOFactory getInstance() {
 
-        if (_instance == null) {
+        if (_INSTANCE == null) {
 
             String property = System.getProperty("dao");
 
             if ("hashmap".equals(property)) {
-                _instance = new HashMapDAOFactory();
+                _INSTANCE = new HashMapDAOFactory();
             } else if ("mysql".equals(property)) {
-                _instance = new HashMapDAOFactory();
+                _INSTANCE = new HashMapDAOFactory();
             }
 
         }
 
-        return _instance;
+        return _INSTANCE;
     }
+
+    public abstract AccountDAO getAccountDAO();
 
 }
