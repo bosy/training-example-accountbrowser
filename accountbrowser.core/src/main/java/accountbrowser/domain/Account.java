@@ -12,6 +12,7 @@ public class Account {
     private int id;
     private int balance;
     private String state;
+    private Owner owner;
 
     /**
      * @return the id
@@ -56,6 +57,21 @@ public class Account {
      */
     public void setState(String state) {
         this.state = state;
+    }
+
+    /**
+     * @return the owner
+     */
+    public Owner getOwner() {
+        return owner;
+    }
+
+    /**
+     * @param owner
+     *            the owner to set
+     */
+    public void setOwner(Owner owner) {
+        this.owner = owner;
     }
 
 }

@@ -5,13 +5,16 @@ package com.tieto.academy.accountbrowser.gui.swing.accountdetail.action;
 
 import java.awt.event.ActionEvent;
 
-import javax.swing.AbstractAction;
+import accountbrowser.dao.DAOFactory;
+import accountbrowser.domain.Account;
+
+import com.tieto.academy.accountbrowser.gui.swing.accountdetail.AccountDetailFrame;
 
 /**
  * @author Student
  * 
  */
-public class FetchAccountDetailsActions extends AbstractAction {
+public class FetchAccountDetailsActions extends AccountDetailAbstractAction {
 
     /**
      * 
@@ -21,8 +24,8 @@ public class FetchAccountDetailsActions extends AbstractAction {
     /**
      * @param name
      */
-    public FetchAccountDetailsActions(String name) {
-        super(name);
+    public FetchAccountDetailsActions(AccountDetailFrame frame, String name) {
+        super(frame, name);
 
     }
 
@@ -35,8 +38,21 @@ public class FetchAccountDetailsActions extends AbstractAction {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        // DAOFactory factory = DAOFactory.getInstance();
+        try {
+            DAOFactory daoFactory = DAOFactory.getInstance();
+            String id = getFrame().getTxtAccountId().getText();
+            Account account = daoFactory.getAccountDAO().fetch(Integer.parseInt(id));
 
+            getFrame().getTxtOwnersName().setText(account.getOwner().getName());
+            getFrame().getTxtBalance().setText(Integer.toString(account.getBalance()));
+            getFrame().getTxtAccountState().setText(account.getState());
+
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
+
+            getFrame().getTxtOwnersName().setText("");
+            getFrame().getTxtBalance().setText("");
+        }
     }
 
 }
