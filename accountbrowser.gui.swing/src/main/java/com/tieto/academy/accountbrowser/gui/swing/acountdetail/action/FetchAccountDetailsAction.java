@@ -5,19 +5,21 @@ package com.tieto.academy.accountbrowser.gui.swing.acountdetail.action;
 
 import java.awt.event.ActionEvent;
 
-import javax.swing.AbstractAction;
+import com.tieto.academy.accountbrowser.DAO.DAOFactory;
+import com.tieto.academy.accountbrowser.gui.swing.accountdetail.AccountDetailFrame;
 
 /**
  * @author Student
  * 
  */
-public class FetchAccountDetailsAction extends AbstractAction {
+public class FetchAccountDetailsAction extends AccountDetailAbstractAction {
 
     /**
      * @param name
+     * @param frame
      */
-    public FetchAccountDetailsAction(String name) {
-        super(name);
+    public FetchAccountDetailsAction(String name, AccountDetailFrame frame) {
+        super(name, frame);
         // TODO Auto-generated constructor stub
     }
 
@@ -29,7 +31,9 @@ public class FetchAccountDetailsAction extends AbstractAction {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("tlacidlo zmacknuto");
+        DAOFactory daoFactory = DAOFactory.getInstance();
+        String id = getFrame().getTxtAccountId().getText();
+        daoFactory.getAccountDAO().fetch(Integer.parseInt(id));
     }
 
 }

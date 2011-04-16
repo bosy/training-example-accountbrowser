@@ -3,11 +3,13 @@
  */
 package com.tieto.academy.accountbrowser.DAO;
 
+import com.tieto.academy.accountbrowser.DAO.Hashmap.HashmapDAOFactory;
+
 /**
  * @author Student
  * 
  */
-public class DAOFactory {
+public abstract class DAOFactory {
 
     private static DAOFactory instance;
 
@@ -17,9 +19,11 @@ public class DAOFactory {
             if ("hashmap".equals(property)) {
                 instance = new HashmapDAOFactory();
             } else if ("mysql".equals(property)) {
-
+                // throw new Exception("MySQL not yet implemented");
             }
         }
         return instance;
     }
+
+    public abstract AccountDAO getAccountDAO();
 }

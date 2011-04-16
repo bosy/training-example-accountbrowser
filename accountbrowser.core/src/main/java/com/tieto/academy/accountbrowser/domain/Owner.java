@@ -12,6 +12,14 @@ public class Owner {
     private String name;
 
     /**
+     * @param name
+     */
+    public Owner(String name) {
+        super();
+        this.name = name;
+    }
+
+    /**
      * @return the name
      */
     public String getName() {

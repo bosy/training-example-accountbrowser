@@ -9,6 +9,6 @@ import com.tieto.academy.accountbrowser.domain.Account;
  * @author Student
  * 
  */
-public interface accountDAO {
+public interface AccountDAO {
     public Account fetch(int id);
 }

@@ -16,6 +16,20 @@ public class Account {
     private Owner owner;
 
     /**
+     * @param id
+     * @param state
+     * @param balance
+     * @param owner
+     */
+    public Account(int id, String state, int balance, Owner owner) {
+        super();
+        this.id = id;
+        this.state = state;
+        this.balance = balance;
+        this.owner = owner;
+    }
+
+    /**
      * @return the owner
      */
     public Owner getOwner() {
