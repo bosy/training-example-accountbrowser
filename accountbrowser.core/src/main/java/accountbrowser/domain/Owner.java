@@ -25,4 +25,8 @@ public class Owner {
         this.name = name;
     }
 
+    public String toString() {
+        return getName();
+    }
+
 }

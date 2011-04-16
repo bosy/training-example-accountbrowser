@@ -13,6 +13,10 @@ public class Account {
     private int balance;
     private Owner owner;
 
+    public String toString() {
+        return getId() + " " + getOwner().getName() + " " + getBalance() + " " + getState();
+    }
+
     /**
      * @return the state
      */
@@ -59,7 +63,8 @@ public class Account {
     }
 
     /**
-     * @param owner the owner to set
+     * @param owner
+     *            the owner to set
      */
     public void setOwner(Owner owner) {
         this.owner = owner;
