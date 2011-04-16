@@ -6,6 +6,7 @@ package com.tieto.academy.accountbrowser.gui.swing.acountdetail.action;
 import java.awt.event.ActionEvent;
 
 import com.tieto.academy.accountbrowser.DAO.DAOFactory;
+import com.tieto.academy.accountbrowser.domain.Account;
 import com.tieto.academy.accountbrowser.gui.swing.accountdetail.AccountDetailFrame;
 
 /**
@@ -33,7 +34,13 @@ public class FetchAccountDetailsAction extends AccountDetailAbstractAction {
     public void actionPerformed(ActionEvent e) {
         DAOFactory daoFactory = DAOFactory.getInstance();
         String id = getFrame().getTxtAccountId().getText();
-        daoFactory.getAccountDAO().fetch(Integer.parseInt(id));
+        Account account = daoFactory.getAccountDAO().fetch(Integer.parseInt(id));
+        // naplneni jmena vlastnika
+        getFrame().getTxtOwnersName().setText(account.getOwner().getName());
+        // naplneni stavu uctu
+        getFrame().getTxtAccountState().setText(account.getState());
+        // naplneni castky na ucte
+        getFrame().getTxtBalance().setText(account.getBalance() + "");
     }
 
 }
