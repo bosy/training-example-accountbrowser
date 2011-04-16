@@ -5,19 +5,25 @@ package com.tieto.academy.accountbrowser.gui.swing.accountdetail.action;
 
 import java.awt.event.ActionEvent;
 
-import javax.swing.AbstractAction;
+import javax.swing.JOptionPane;
+
+import accountbrowser.dao.DAOFactory;
+import accountbrowser.domain.Account;
+
+import com.tieto.academy.accountbrowser.gui.swing.accountdetail.AccountDetailFrame;
 
 /**
  * @author Student
  * 
  */
-public class FetchAccountDetailsAction extends AbstractAction {
+public class FetchAccountDetailsAction extends AccountDetailAbstractAction {
 
     /**
+     * @param frame
      * @param name
      */
-    public FetchAccountDetailsAction(String name) {
-        super(name);
+    public FetchAccountDetailsAction(AccountDetailFrame frame, String name) {
+        super(frame, name);
         // TODO Auto-generated constructor stub
     }
 
@@ -29,8 +35,17 @@ public class FetchAccountDetailsAction extends AbstractAction {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        // DAOFactory daoFactory =
-        // DAOFactory.getInstance().getAccountDAO().fetch();
+        DAOFactory daoFactory = DAOFactory.getInstance();
+        String text = getFrame().getTxtAccountId().getText();
+        if (text.equals("")) {
+            JOptionPane.showMessageDialog(getFrame(), "Fill in the value, please.");
+            return;
+        }
+        Integer id = Integer.valueOf(text);
+        Account fetch = daoFactory.getAccountDAO().fetch(id);
+        getFrame().getTxtBalance().setText("" + fetch.getBalance());
+        getFrame().getTxtOwnersName().setText("" + fetch.getOwner().getName());
+        getFrame().getTxtAccountState().setText("" + fetch.getState());
     }
 
 }
