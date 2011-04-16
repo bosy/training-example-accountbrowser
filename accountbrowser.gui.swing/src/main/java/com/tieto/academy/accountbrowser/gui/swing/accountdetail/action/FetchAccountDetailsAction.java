@@ -41,6 +41,11 @@ public class FetchAccountDetailsAction extends AccountDetailAbstractAction {
         DAOFactory daofactory = DAOFactory.getInstance();
         int id = Integer.valueOf(getFrame().getTxtAccountId().getText());
         Account account = daofactory.getAccountDAO().fetchOne(id);
-        System.out.println(account.toString());
+
+        getFrame().getTxtAccountState().setText(account.getState());
+        getFrame().getTxtBalance().setText(Integer.toString(account.getBalance()));
+        getFrame().getTxtOwnersName().setText(account.getOwner().toString());
+
+        // System.out.println(account.toString());
     }
 }
