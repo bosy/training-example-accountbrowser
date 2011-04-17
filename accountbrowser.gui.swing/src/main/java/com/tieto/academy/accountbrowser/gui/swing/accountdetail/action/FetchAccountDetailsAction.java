@@ -5,13 +5,18 @@ package com.tieto.academy.accountbrowser.gui.swing.accountdetail.action;
 
 import java.awt.event.ActionEvent;
 
-import javax.swing.AbstractAction;
+import javax.swing.JOptionPane;
+
+import accountbrowser.dao.DAOFactory;
+import accountbrowser.domain.Account;
+
+import com.tieto.academy.accountbrowser.gui.swing.accountdetail.AccountDetailFrame;
 
 /**
  * @author Student
  * 
  */
-public class FetchAccountDetailsAction extends AbstractAction {
+public class FetchAccountDetailsAction extends AccountDetailAbstractAction {
 
     /**
      * 
@@ -27,18 +32,26 @@ public class FetchAccountDetailsAction extends AbstractAction {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        System.out.println("Fetch account");
-        // DaoFactory df
+        DAOFactory daoFactory = DAOFactory.getInstance();
+        String text = getFrame().getTxtAccountId().getText();
+        if ("".equals(text)) {
+            JOptionPane.showMessageDialog(getFrame(), "Fill in id field");
+            return;
+        }
+        Integer id = Integer.valueOf(text);
+        Account account = daoFactory.getAccountDAO().fetch(id);
+        getFrame().getTxtOwnersName().setText(account.getOwner().getName());
+        getFrame().getTxtAccountState().setText(account.getState());
+        getFrame().getTxtBalance().setText(new Integer(account.getBalance()).toString());
 
     }
 
     /**
      * @param name
      */
-    public FetchAccountDetailsAction(String name) {
-        super(name);
-        // TODO Auto-generated constructor stub
+    public FetchAccountDetailsAction(AccountDetailFrame frame, String name) {
+        super(frame, name);
+
     }
 
 }
