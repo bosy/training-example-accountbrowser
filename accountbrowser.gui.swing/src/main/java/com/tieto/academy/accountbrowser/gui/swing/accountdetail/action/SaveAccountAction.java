@@ -6,7 +6,6 @@ package com.tieto.academy.accountbrowser.gui.swing.accountdetail.action;
 import java.awt.event.ActionEvent;
 
 import com.tieto.academy.accountbrowser.core.bc.Account;
-import com.tieto.academy.accountbrowser.dao.DaoFactory;
 import com.tieto.academy.accountbrowser.gui.swing.accountdetail.AccountDetailFrame;
 
 /**
@@ -44,6 +43,6 @@ public class SaveAccountAction extends AccountDetailAbstractAction {
         final Account account = this.getFrame().getStateHolder().getState().getAccount();
         account.setState("Saved");
         account.getOwner().setName(this.getFrame().getTxtOwnersName().getText());
-        DaoFactory.getInstance().getAccountDao().save(account);
+        accountDao.save(account);
     }
 }

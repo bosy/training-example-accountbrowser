@@ -5,6 +5,8 @@ package com.tieto.academy.accountbrowser.gui.swing.accountdetail.action;
 
 import javax.swing.AbstractAction;
 
+import com.tieto.academy.accountbrowser.dao.AccountDao;
+import com.tieto.academy.accountbrowser.dao.DaoFactory;
 import com.tieto.academy.accountbrowser.gui.swing.accountdetail.AccountDetailFrame;
 
 /**
@@ -22,6 +24,8 @@ public abstract class AccountDetailAbstractAction extends AbstractAction {
      * frame
      */
     private final AccountDetailFrame frame;
+
+    protected AccountDao accountDao = DaoFactory.getInstance().getAccountDao();
 
     /**
      * Creates new instance.
@@ -43,5 +47,13 @@ public abstract class AccountDetailAbstractAction extends AbstractAction {
      */
     public AccountDetailFrame getFrame() {
         return this.frame;
+    }
+
+    /**
+     * @param accountDao
+     *            the accountDao to set
+     */
+    public void setAccountDao(AccountDao accountDao) {
+        this.accountDao = accountDao;
     }
 }
