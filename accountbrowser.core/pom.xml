@@ -13,15 +13,6 @@
 
 	<name>Account Browser - Core module</name>
 
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-
 	<reporting>
 		<outputDirectory>./../target/site/${project.artifactId}/</outputDirectory>
 	</reporting>
