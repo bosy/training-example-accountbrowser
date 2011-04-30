@@ -16,6 +16,21 @@ public class Account {
     private Owner owner;
 
     /**
+     * @return the owner
+     */
+    public Owner getOwner() {
+        return owner;
+    }
+
+    /**
+     * @param owner
+     *            the owner to set
+     */
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
+
+    /**
      * @return the state
      */
     public String getState() {
