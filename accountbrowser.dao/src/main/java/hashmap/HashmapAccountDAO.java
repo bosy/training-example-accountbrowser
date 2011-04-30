@@ -24,7 +24,7 @@ public class HashmapAccountDAO implements AccountDAO {
         Account account = new Account();
         account.setBalance(100);
         account.setId(0);
-        account.setState("saved");
+        account.setState("Saved");
         account.setOwner(owner);
         data.put(account.getId(), account);
 
@@ -33,7 +33,7 @@ public class HashmapAccountDAO implements AccountDAO {
         account = new Account();
         account.setBalance(250);
         account.setId(1);
-        account.setState("saved");
+        account.setState("Approved");
         account.setOwner(owner);
         data.put(account.getId(), account);
     }

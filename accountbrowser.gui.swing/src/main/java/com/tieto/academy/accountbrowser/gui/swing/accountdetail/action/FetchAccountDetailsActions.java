@@ -5,10 +5,15 @@ package com.tieto.academy.accountbrowser.gui.swing.accountdetail.action;
 
 import java.awt.event.ActionEvent;
 
+import javax.swing.JOptionPane;
+
 import accountbrowser.dao.DAOFactory;
 import accountbrowser.domain.Account;
 
 import com.tieto.academy.accountbrowser.gui.swing.accountdetail.AccountDetailFrame;
+import com.tieto.academy.accountbrowser.gui.swing.accountdetail.state.ApprovedState;
+import com.tieto.academy.accountbrowser.gui.swing.accountdetail.state.EmptyState;
+import com.tieto.academy.accountbrowser.gui.swing.accountdetail.state.SavedState;
 
 /**
  * @author Student
@@ -43,15 +48,22 @@ public class FetchAccountDetailsActions extends AccountDetailAbstractAction {
             String id = getFrame().getTxtAccountId().getText();
             Account account = daoFactory.getAccountDAO().fetch(Integer.parseInt(id));
 
-            getFrame().getTxtOwnersName().setText(account.getOwner().getName());
-            getFrame().getTxtBalance().setText(Integer.toString(account.getBalance()));
-            getFrame().getTxtAccountState().setText(account.getState());
+            if (null != account) {
+                String state = account.getState();
+                if ("Approved".equals(state)) {
+                    getFrame().setState(new ApprovedState(account));
+                } else if ("Saved".equals(state)) {
+                    getFrame().setState(new SavedState(account));
+                } else {
+                    getFrame().setState(new EmptyState());
+                }
+            } else {
+                JOptionPane.showMessageDialog(getFrame(), "Uzivatel s id " + id + " nebyl nalezen");
+                getFrame().setState(new EmptyState());
+            }
 
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
 
-            getFrame().getTxtOwnersName().setText("");
-            getFrame().getTxtBalance().setText("");
         }
     }
 
