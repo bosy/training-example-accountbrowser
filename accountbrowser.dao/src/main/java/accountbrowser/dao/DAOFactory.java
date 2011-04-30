@@ -13,13 +13,13 @@ public abstract class DAOFactory {
 
     private static DAOFactory INSTANCE;
 
-    public synchronized static DAOFactory getInstance() throws Exception {
+    public synchronized static DAOFactory getInstance() {
         if (null == INSTANCE) {
             String dao = System.getProperty("dao");
             if ("hashmap".equalsIgnoreCase(dao)) {
                 INSTANCE = new HashmapDAOFactory();
             } else {
-                throw new Exception("No class definition found for dao = " + dao);
+                return null;
             }
         }
         return INSTANCE;

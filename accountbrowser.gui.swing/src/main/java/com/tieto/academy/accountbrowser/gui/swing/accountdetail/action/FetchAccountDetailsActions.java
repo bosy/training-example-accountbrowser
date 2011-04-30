@@ -43,28 +43,24 @@ public class FetchAccountDetailsActions extends AccountDetailAbstractAction {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        try {
-            DAOFactory daoFactory = DAOFactory.getInstance();
-            String id = getFrame().getTxtAccountId().getText();
-            Account account = daoFactory.getAccountDAO().fetch(Integer.parseInt(id));
+        String id = getFrame().getTxtAccountId().getText();
+        DAOFactory daoFactory = DAOFactory.getInstance();
+        Account account = daoFactory.getAccountDAO().fetch(Integer.valueOf(id));
 
-            if (null != account) {
-                String state = account.getState();
-                if ("Approved".equals(state)) {
-                    getFrame().setState(new ApprovedState(account));
-                } else if ("Saved".equals(state)) {
-                    getFrame().setState(new SavedState(account));
-                } else {
-                    getFrame().setState(new EmptyState());
-                }
+        if (null != account) {
+            String state = account.getState();
+            if ("Approved".equals(state)) {
+                getFrame().setState(new ApprovedState(account));
+            } else if ("Saved".equals(state)) {
+                getFrame().setState(new SavedState(account));
             } else {
-                JOptionPane.showMessageDialog(getFrame(), "Uzivatel s id " + id + " nebyl nalezen");
                 getFrame().setState(new EmptyState());
             }
-
-        } catch (Exception ex) {
-
+        } else {
+            JOptionPane.showMessageDialog(getFrame(), "Uzivatel s id " + id + " nebyl nalezen");
+            getFrame().setState(new EmptyState());
         }
+
     }
 
 }
