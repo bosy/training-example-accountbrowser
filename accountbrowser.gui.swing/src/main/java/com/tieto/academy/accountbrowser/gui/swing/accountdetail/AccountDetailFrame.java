@@ -49,6 +49,7 @@ public class AccountDetailFrame extends javax.swing.JFrame {
      */
     public AccountDetailFrame() {
         super("Account browser");
+        setResizable(false);
         this.initGUI();
         this.stateHolder = new StateHolder(new EmptyState(), this);
     }

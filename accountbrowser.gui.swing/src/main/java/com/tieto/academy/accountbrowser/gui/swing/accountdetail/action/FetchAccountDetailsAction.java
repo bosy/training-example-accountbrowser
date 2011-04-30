@@ -45,7 +45,6 @@ public class FetchAccountDetailsAction extends AccountDetailAbstractAction {
      */
     public FetchAccountDetailsAction(AccountDetailFrame frame, String name) {
         super(frame, name);
-        // TODO Auto-generated constructor stub
     }
 
 }
