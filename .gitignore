@@ -2,4 +2,6 @@
 .classpath
 .settings/
 .svn/
+.metadata
+Servers
 target/
