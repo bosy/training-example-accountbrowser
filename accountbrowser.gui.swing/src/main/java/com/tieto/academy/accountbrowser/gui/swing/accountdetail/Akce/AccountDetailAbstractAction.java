@@ -13,6 +13,10 @@ import com.tieto.academy.accountbrowser.gui.swing.accountdetail.AccountDetailFra
  */
 public abstract class AccountDetailAbstractAction extends AbstractAction {
 
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 1L;
     private AccountDetailFrame frame;
 
     public AccountDetailAbstractAction() {

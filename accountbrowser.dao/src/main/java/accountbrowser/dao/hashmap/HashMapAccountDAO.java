@@ -21,7 +21,7 @@ public class HashMapAccountDAO implements AccountDAO {
         account1.setId(1);
         account1.setBalance(1000000);
         Owner owner1 = new Owner();
-        owner1.setJmeno("Anton Abík");
+        owner1.setJmeno("Anton Abik");
         account1.setOwner(owner1);
         account1.setState("Saved");
         data.put(account1.getId(), account1);

@@ -16,6 +16,11 @@ import com.tieto.academy.accountbrowser.gui.swing.accountdetail.AccountDetailFra
  */
 public class FetchAccountDetailsActions extends AccountDetailAbstractAction {
 
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 1L;
+
     /*
      * (non-Javadoc)
      * 
