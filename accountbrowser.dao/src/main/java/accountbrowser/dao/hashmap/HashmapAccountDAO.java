@@ -31,7 +31,7 @@ public class HashmapAccountDAO implements AccountDAO {
         account2.setBalance(50);
         Owner owner2 = new Owner();
         owner2.setName("Jan Kopriva");
-        account2.setOwner(owner1);
+        account2.setOwner(owner2);
         account2.setState("Approved");
         account2.setId(101);
         data.put(account2.getId(), account2);
