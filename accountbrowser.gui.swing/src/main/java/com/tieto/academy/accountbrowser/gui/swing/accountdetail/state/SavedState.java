@@ -52,6 +52,7 @@ public class SavedState extends FetchedState {
      */
     @Override
     public void initBtnApprove(AccountDetailFrame frame) {
+
         frame.getBtnApprove().setEnabled(true);
     }
 
