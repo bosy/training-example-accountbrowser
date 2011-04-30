@@ -19,7 +19,6 @@ public class SavedState extends FetchedState {
      */
     public SavedState(Account account) {
         super(account);
-        // TODO Auto-generated constructor stub
     }
 
     /*
