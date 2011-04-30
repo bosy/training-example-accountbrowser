@@ -3,6 +3,7 @@
  */
 package com.tieto.academy.accountbrowser.gui.swing.accountdetail.state;
 
+import com.tieto.academy.accountbrowser.domain.Account;
 import com.tieto.academy.accountbrowser.gui.swing.accountdetail.AccountDetailFrame;
 
 /**
@@ -11,6 +12,8 @@ import com.tieto.academy.accountbrowser.gui.swing.accountdetail.AccountDetailFra
  * @author Ondrej Kvasnovsky
  */
 public interface State {
+
+    public Account getAccount();
 
     /**
      * Initialize the component.

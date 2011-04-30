@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import com.tieto.academy.accountbrowser.DAO.DAOFactory;
 import com.tieto.academy.accountbrowser.domain.Account;
 import com.tieto.academy.accountbrowser.gui.swing.accountdetail.AccountDetailFrame;
+import com.tieto.academy.accountbrowser.gui.swing.accountdetail.state.ApprovedState;
+import com.tieto.academy.accountbrowser.gui.swing.accountdetail.state.SavedState;
 
 /**
  * @author Student
@@ -35,12 +37,12 @@ public class FetchAccountDetailsAction extends AccountDetailAbstractAction {
         DAOFactory daoFactory = DAOFactory.getInstance();
         String id = getFrame().getTxtAccountId().getText();
         Account account = daoFactory.getAccountDAO().fetch(Integer.parseInt(id));
-        // naplneni jmena vlastnika
-        getFrame().getTxtOwnersName().setText(account.getOwner().getName());
-        // naplneni stavu uctu
-        getFrame().getTxtAccountState().setText(account.getState());
-        // naplneni castky na ucte
-        getFrame().getTxtBalance().setText(account.getBalance() + "");
+        if (account != null) {
+            if ("Approved".equals(account.getState())) {
+                getFrame().setState(new ApprovedState(account));
+            } else if ("Saved".equals(account.getState())) {
+                getFrame().setState(new SavedState(account));
+            }
+        }
     }
-
 }

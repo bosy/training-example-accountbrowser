@@ -3,6 +3,7 @@
  */
 package com.tieto.academy.accountbrowser.gui.swing.accountdetail.state;
 
+import com.tieto.academy.accountbrowser.domain.Account;
 import com.tieto.academy.accountbrowser.gui.swing.accountdetail.AccountDetailFrame;
 
 /**
@@ -11,6 +12,15 @@ import com.tieto.academy.accountbrowser.gui.swing.accountdetail.AccountDetailFra
  * @author Ondrej Kvasnovsky
  */
 public abstract class AbstractState implements State {
+
+    private Account account;
+
+    /**
+     * @param account
+     */
+    public AbstractState(Account account) {
+        this.account = account;
+    }
 
     /**
      * {@inheritDoc}
@@ -128,5 +138,17 @@ public abstract class AbstractState implements State {
      */
     public void initTxtOwnersName(final AccountDetailFrame frame) {
         frame.getTxtOwnersName().setEnabled(false);
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see
+     * com.tieto.academy.accountbrowser.gui.swing.accountdetail.state.State#
+     * getAccount()
+     */
+    @Override
+    public Account getAccount() {
+        return account;
     }
 }
