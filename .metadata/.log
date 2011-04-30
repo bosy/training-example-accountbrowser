@@ -1,0 +1,85 @@
+!SESSION 2011-04-30 09:25:23.112 -----------------------------------------------
+eclipse.buildId=2.6.0.201103161000-RELEASE
+java.version=1.6.0_24
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product com.springsource.sts.ide
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.springsource.sts.ide
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: add_script_load_bp in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: bp_conditional in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: bp_conditonal in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: bp_entry_and_exit in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: bp_entry_only in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: bp_exit_only in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: bp_hit_count in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: bp_line_number in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: bp_suspend_vm in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: breakpoint_configuration in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: connect in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: connector in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: connector_properties in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: creating_script_load_bp in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: enable_hit_count in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: enter_new_hit_count in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: exception_occurred_setting_bp_properties in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: hit_count_must_be_positive in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: no_description_provided in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: scripts in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: select_javascript_file in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: set_bp_hit_count in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: suspend_target in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: suspend_thread in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: the_argument_0_is_not_valid in: org.eclipse.wst.jsdt.debug.internal.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2011-04-30 09:27:09.816
+!MESSAGE NLS unused message: osgi.nls.warnings in: org.eclipse.wst.jsdt.debug.internal.ui.messages
