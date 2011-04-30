@@ -39,6 +39,5 @@ public class FetchAccountDetailAction extends AccountDetailAbstractAction {
         Integer id = Integer.valueOf(strID);
         Account account = accountDAO.Fetch(id);
         this.getFrame().getTxtOwnersName().setText(account.getOwner().getName());
-
     }
 }
