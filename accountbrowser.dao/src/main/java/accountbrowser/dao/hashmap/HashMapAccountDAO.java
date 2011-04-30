@@ -32,7 +32,7 @@ public class HashMapAccountDAO implements AccountDAO {
         Owner owner2 = new Owner();
         owner2.setJmeno("jozko mrkvicka");
         account2.setOwner(owner2);
-        account2.setState("Saved");
+        account2.setState("Approved");
         data.put(account2.getId(), account2);
     }
 

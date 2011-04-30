@@ -5,51 +5,15 @@ package com.tieto.academy.accountbrowser.gui.swing.accountdetail.state;
 
 import javax.swing.JTextField;
 
+import accountbrowser.domain.Account;
+
 import com.tieto.academy.accountbrowser.gui.swing.accountdetail.AccountDetailFrame;
 
 /**
  * @author Student
  * 
  */
-public class EmptyState extends AbstractState {
-
-    /**
-     * @param account
-     */
-    /**
-     * 
-     */
-
-    public EmptyState() {
-        super(null);
-
-    }
-
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * com.tieto.academy.accountbrowser.gui.swing.accountdetail.state.AbstractState
-     * #initBtnApprove(com.tieto.academy.accountbrowser.gui.swing.accountdetail.
-     * AccountDetailFrame)
-     */
-    @Override
-    public void initBtnApprove(AccountDetailFrame frame) {
-        frame.getBtnApprove().setEnabled(false);
-    }
-
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * com.tieto.academy.accountbrowser.gui.swing.accountdetail.state.AbstractState
-     * #initBtnSave(com.tieto.academy.accountbrowser.gui.swing.accountdetail.
-     * AccountDetailFrame)
-     */
-    @Override
-    public void initBtnSave(AccountDetailFrame frame) {
-        frame.getBtnSave().setEnabled(false);
-    }
+public abstract class FetchedState extends AbstractState {
 
     /*
      * (non-Javadoc)
@@ -60,11 +24,19 @@ public class EmptyState extends AbstractState {
      * initTxtAccountState(com.tieto.academy.accountbrowser.gui.swing.accountdetail
      * .AccountDetailFrame)
      */
+    /**
+     * @param account
+     */
+    public FetchedState(Account account) {
+        super(account);
+
+    }
+
     @Override
     public void initTxtAccountState(AccountDetailFrame frame) {
         JTextField txtAccountState = frame.getTxtAccountState();
         txtAccountState.setEnabled(false);
-        txtAccountState.setText("");
+        txtAccountState.setText(getAccount().getState());
     }
 
     /*
@@ -79,7 +51,7 @@ public class EmptyState extends AbstractState {
     public void initTxtBalance(AccountDetailFrame frame) {
         JTextField txtBalance = frame.getTxtBalance();
         txtBalance.setEnabled(false);
-        txtBalance.setText("");
+        txtBalance.setText(getAccount().getBalance() + "");
     }
 
     /*
@@ -93,9 +65,9 @@ public class EmptyState extends AbstractState {
      */
     @Override
     public void initTxtOwnersName(AccountDetailFrame frame) {
-        JTextField txtOwnersName = frame.getTxtOwnersName();
-        txtOwnersName.setEnabled(false);
-        txtOwnersName.setText("");
+        JTextField txtOwner = frame.getTxtOwnersName();
+        txtOwner.setEnabled(false);
+        txtOwner.setText(getAccount().getOwner().getJmeno());
     }
 
 }
