@@ -33,8 +33,8 @@ public class HashMapAccountDAO implements AccountDAO {
 
         account = new Account();
         account.set_balance(2);
-        account.set_id(2);
-        account.set_state("Saved");
+        account.set_id(1);
+        account.set_state("Approved");
         account.set_owner(owner);
 
         data.put(account.get_id(), account);
