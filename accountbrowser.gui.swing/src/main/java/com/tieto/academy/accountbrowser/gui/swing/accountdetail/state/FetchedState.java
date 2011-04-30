@@ -6,7 +6,6 @@ package com.tieto.academy.accountbrowser.gui.swing.accountdetail.state;
 import javax.swing.JTextField;
 
 import com.tieto.academy.accountbrowser.domain.Account;
-import com.tieto.academy.accountbrowser.domain.Owner;
 import com.tieto.academy.accountbrowser.gui.swing.accountdetail.AccountDetailFrame;
 
 /**
@@ -49,7 +48,9 @@ public abstract class FetchedState extends AbstractState {
      */
     @Override
     public void initTxtBalance(AccountDetailFrame frame) {
-        frame.getTxtBalance().setText(getAccount().getBalance() + "");
+        JTextField txtBalance = frame.getTxtBalance();
+        txtBalance.setEnabled(false);
+        txtBalance.setText(getAccount().getBalance() + "");
     }
 
     /*
@@ -63,8 +64,9 @@ public abstract class FetchedState extends AbstractState {
      */
     @Override
     public void initTxtOwnersName(AccountDetailFrame frame) {
-        Owner owner = getAccount().getOwner();
-        frame.getTxtOwnersName().setText(owner.getName());
+        JTextField txtOwnersName = frame.getTxtOwnersName();
+        txtOwnersName.setEnabled(false);
+        txtOwnersName.setText(getAccount().getOwner().getName());
     }
 
 }

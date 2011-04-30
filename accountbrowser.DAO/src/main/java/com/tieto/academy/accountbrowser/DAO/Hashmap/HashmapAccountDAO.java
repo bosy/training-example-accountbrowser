@@ -19,7 +19,7 @@ public class HashmapAccountDAO implements AccountDAO {
 
     static {
         Account account1 = new Account(1, "Saved", 124, new Owner("Robert Saniga"));
-        Account account2 = new Account(2, "Saved", 1512205533, new Owner("Bill Gates"));
+        Account account2 = new Account(2, "Approved", 1512205533, new Owner("Bill Gates"));
 
         data.put(1, account1);
         data.put(2, account2);
