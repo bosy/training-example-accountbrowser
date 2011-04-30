@@ -13,6 +13,9 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
 import com.tieto.academy.accountbrowser.gui.swing.accountdetail.action.FetchAccountDetailAction;
+import com.tieto.academy.accountbrowser.gui.swing.accountdetail.state.EmptyState;
+import com.tieto.academy.accountbrowser.gui.swing.accountdetail.state.State;
+import com.tieto.academy.accountbrowser.gui.swing.accountdetail.state.StateHolder;
 
 /**
  * Account detail GUI frame.
@@ -39,6 +42,7 @@ public class AccountDetailFrame extends javax.swing.JFrame {
     private JTextField txtAccountState;
     private JTextField txtBalance;
     private JTextField txtOwnersName;
+    private final StateHolder stateHolder;
 
     /**
      * Creates new instance.
@@ -46,6 +50,7 @@ public class AccountDetailFrame extends javax.swing.JFrame {
     public AccountDetailFrame() {
         super("Account browser");
         this.initGUI();
+        stateHolder = new StateHolder(new EmptyState(), this);
     }
 
     /**
@@ -278,5 +283,13 @@ public class AccountDetailFrame extends javax.swing.JFrame {
             // add your error handling code here
             e.printStackTrace();
         }
+    }
+
+    /**
+     * @param state
+     * @see com.tieto.academy.accountbrowser.gui.swing.accountdetail.state.StateHolder#setState(com.tieto.academy.accountbrowser.gui.swing.accountdetail.state.State)
+     */
+    public void setState(State state) {
+        stateHolder.setState(state);
     }
 }

@@ -23,7 +23,7 @@ public class HashmapAccountDAO implements AccountDAO {
         Owner o = new Owner();
         o.setName("David");
         a.setOwner(o);
-        a.setState("saved");
+        a.setState("approved");
         data.put(1, a);
 
         Account b = new Account();
