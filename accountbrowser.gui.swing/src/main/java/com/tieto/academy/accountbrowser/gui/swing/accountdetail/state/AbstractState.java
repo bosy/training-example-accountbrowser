@@ -3,6 +3,8 @@
  */
 package com.tieto.academy.accountbrowser.gui.swing.accountdetail.state;
 
+import accountbrowser.domain.Account;
+
 import com.tieto.academy.accountbrowser.gui.swing.accountdetail.AccountDetailFrame;
 
 /**
@@ -17,6 +19,24 @@ public abstract class AbstractState implements State {
      * 
      * @see com.tieto.academy.accountbrowser.gui.swing.accountdetail.state.State#initBtnApprove(com.tieto.academy.accountbrowser.gui.swing.accountdetail.AccountDetailFrame)
      */
+
+    private Account account;
+
+    /**
+     * @return the account
+     */
+    public Account getAccount() {
+        return account;
+    }
+
+    /**
+     * @param account
+     */
+    public AbstractState(Account account) {
+
+        this.account = account;
+    }
+
     public void initBtnApprove(final AccountDetailFrame frame) {
         frame.getBtnApprove().setEnabled(false);
     }
