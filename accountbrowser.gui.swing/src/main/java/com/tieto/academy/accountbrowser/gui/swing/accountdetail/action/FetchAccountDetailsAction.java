@@ -9,6 +9,8 @@ import accountbrowser.dao.DAOFactory;
 import accountbrowser.domain.Account;
 
 import com.tieto.academy.accountbrowser.gui.swing.accountdetail.AccountDetailFrame;
+import com.tieto.academy.accountbrowser.gui.swing.accountdetail.state.ApprovedState;
+import com.tieto.academy.accountbrowser.gui.swing.accountdetail.state.SavedState;
 
 /**
  * @author Student
@@ -42,10 +44,11 @@ public class FetchAccountDetailsAction extends AccountDetailAbstractAction {
         int id = Integer.valueOf(getFrame().getTxtAccountId().getText());
         Account account = daofactory.getAccountDAO().fetchOne(id);
 
-        {
-            getFrame().getTxtAccountState().setText(account.getState());
-            getFrame().getTxtBalance().setText(Integer.toString(account.getBalance()));
-            getFrame().getTxtOwnersName().setText(account.getOwner().toString());
+        if (account != null) {
+            if ("Approved".equals(account.getState()))
+                getFrame().setState(new ApprovedState(account));
+            else if ("Saved".equals(account.getState()))
+                getFrame().setState(new SavedState(account));
         }
 
         // System.out.println(account.toString());
