@@ -11,6 +11,8 @@ import accountbrowser.dao.DAOFactory;
 import accountbrowser.domain.Account;
 
 import com.tieto.academy.accountbrowser.gui.swing.accountdetail.AccountDetailFrame;
+import com.tieto.academy.accountbrowser.gui.swing.accountdetail.state.ApprovedState;
+import com.tieto.academy.accountbrowser.gui.swing.accountdetail.state.SavedState;
 
 /**
  * @author Student
@@ -42,10 +44,14 @@ public class FetchAccountDetailsAction extends AccountDetailAbstractAction {
         DAOFactory daoFactory = DAOFactory.getInstance();
         Integer id = Integer.valueOf(text);
         Account account = daoFactory.getAccountDAO().fetch(id);
-        // TODO: implement state pattern
-
-        getFrame().getTxtAccountState().setText(account.getState());
-        getFrame().getTxtAccountState().setEditable(false);
+        // state pattern is used
+        if (account != null) {
+            if ("Approved".equals(account.getState())) {
+                getFrame().setState(new ApprovedState(account));
+            } else if ("Saved".equals(account.getState())) {
+                getFrame().setState(new SavedState(account));
+            }
+        }
 
     }
 
