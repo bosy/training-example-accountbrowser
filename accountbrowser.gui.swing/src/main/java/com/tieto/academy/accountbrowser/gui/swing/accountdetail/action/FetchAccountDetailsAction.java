@@ -5,8 +5,6 @@ package com.tieto.academy.accountbrowser.gui.swing.accountdetail.action;
 
 import java.awt.event.ActionEvent;
 
-import javax.swing.JOptionPane;
-
 import accountbrowser.dao.DAOFactory;
 import accountbrowser.domain.Account;
 
@@ -36,10 +34,10 @@ public class FetchAccountDetailsAction extends AccountDetailAbstractAction {
     public void actionPerformed(ActionEvent e) {
         DAOFactory daoFactory = DAOFactory.getInstance();
         String text = getFrame().getTxtAccountId().getText();
-        if ("".equals(text)) {
-            JOptionPane.showMessageDialog(getFrame(), "Fill in id field");
-            return;
-        }
+        /*
+         * if ("".equals(text)) { JOptionPane.showMessageDialog(getFrame(),
+         * "Fill in id field"); return; }
+         */
         Integer id = Integer.valueOf(text);
         Account account = daoFactory.getAccountDAO().fetch(id);
 
